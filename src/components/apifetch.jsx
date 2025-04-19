@@ -3,28 +3,26 @@ import axios from "axios";
 
 const Apifetch = () => {
   const [data, setData] = useState([]);
-  const [letter, setLetter] = useState("a"); 
+  const [letter, setLetter] = useState("a");
 
   useEffect(() => {
     if (letter === "") {
-        setData([]);
-        return;
-      }
-    
+      setData([]);
+      return;
+    }
+
     if (/^[a-zA-Z]$/.test(letter)) {
       axios
         .get(`https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`)
         .then((res) => {
-          setData(res.data.meals || []); // fallback to empty array if null
+          setData(res.data.meals || []);
         })
         .catch((err) => {
           console.log(err);
         });
-    }
-    else{
-        alert("Please enter a valid letter (a-z)");
-        setLetter("");
-       
+    } else {
+      alert("Please enter a valid letter (a-z)");
+      setLetter("");
     }
   }, [letter]);
 
@@ -64,11 +62,13 @@ const Apifetch = () => {
               key={idMeal}
               style={{
                 backgroundColor: "#1a1a1a",
-                width: "22%",
+                flex: "1 1 calc(25% - 40px)", // 4 cards per row on large screens
+                minWidth: "250px",
                 padding: "15px",
                 borderRadius: "10px",
                 boxShadow: "0 4px 10px rgba(255, 255, 255, 0.1)",
                 boxSizing: "border-box",
+                maxWidth: "100%",
               }}
             >
               <h1
