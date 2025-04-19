@@ -1,45 +1,37 @@
-body {
-  background-color: #000000;
-  color: white;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.counter {
+.counter{
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
   flex-direction: column;
-  gap: 1rem;
-  padding: 1rem;
-  text-align: center;
+}
+.counter h1{
+  font-size: 2rem;
+}
+body{
+  background-color: #000000;
+  color: white;
+  font-family: Arial, sans-serif;
 }
 
-.counter h1 {
-  font-size: 3rem;
-  margin: 0;
-}
+ button{
 
-button {
-  display: inline-flex;
   justify-content: center;
   align-items: center;
   border: none;
-  border-radius: 50%;
-  width: 15vw;
-  max-width: 80px;
-  min-width: 50px;
-  aspect-ratio: 1 / 1;
+  border-radius:100%;
+
+  width: 80px;
+  height: 80px;
   background: #111215;
+ 
   color: #fff;
   overflow: hidden;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
+
 }
+
+
+
 
 button:active {
   transform: scale(0.97);
@@ -51,10 +43,19 @@ input[type="text"] {
   border: none;
   border-radius: 10px;
   outline: none;
-  width: 80vw;
-  max-width: 300px;
+  width: 250px;
+  margin-bottom: 1rem;
   font-size: 1rem;
   background-color: #2c2c2c;
   color: white;
   box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
 }
+
+
+
+
+
+
+
+
+
