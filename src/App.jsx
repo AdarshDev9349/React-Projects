@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 import Apifetch from './components/apifetch'
 import Counter from './components/counter'
 import Todolist from './components/todolist'
+import Accordion from './components/accordion';
 
 const Navigation = () => {
   const navigate = useNavigate();
@@ -15,6 +16,9 @@ const Navigation = () => {
     border: "none",
     borderRadius: "5px",
     cursor: "pointer",
+    
+    display: "flex",
+    
   };
 
   return (
@@ -22,6 +26,7 @@ const Navigation = () => {
       <button style={buttonStyle} onClick={() => navigate("/counter")}>Counter</button>
       <button style={buttonStyle} onClick={() => navigate("/todo")}>Todo List</button>
       <button style={buttonStyle} onClick={() => navigate("/api")}>API Fetch meals</button>
+      <button style={buttonStyle} onClick={() => navigate("/accordion")}>Accordion</button>
     </div>
   );
 };
@@ -52,6 +57,7 @@ function App() {
         <Route path="/counter" element={<Counter />} />
         <Route path="/todo" element={<Todolist />} />
         <Route path="/api" element={<Apifetch />} />
+        <Route path="/accordion" element={<Accordion />} />
       </Routes>
     
     </Router>
